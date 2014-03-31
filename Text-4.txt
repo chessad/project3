@@ -1,0 +1,101 @@
+// Load the data from the XML file 
+$.get('data/state-crimedata.xml', function(xml) {
+    
+    // Split the lines
+    var $xml = $(xml);
+
+    // push categories
+    $xml.find('categories item').each(function(i, category) {
+        options.xAxis.categories.push($(category).text());
+    });
+
+    // push series
+    $xml.find('series').each(function(i, series) {
+
+        var seriesOptions = {
+            name: $(series).find('name').text(),
+            data: []
+        };
+
+        // push data points
+        $(series).find('data point').each(function(i, point) {
+            seriesOptions.data.push(
+                parseInt($(point).text())
+            );
+        });
+
+        // add it to the options
+        options.series.push(seriesOptions);
+    });
+
+    var chart1 = new Highcharts.Chart(options);
+    
+    
+    
+    
+    --------
+    
+    
+    //        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url: "data/county-crimedata.xml",
+                dataType: "xml",
+                success: function(xml){
+                    var myCountyXML = $.parseXML(xml);
+                    console.log(xml);
+                    return;
+                }
+            });
+        });
+        
+        
+        --------
+        
+        
+            	// Radialize the colors
+		Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+		    return {
+		        radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+		        stops: [
+		            [0, color],
+		            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+		        ]
+		    };
+		});
+                
+                
+    -----
+    
+    function parseXml(xml)
+{
+	var htmlBottom = "";
+	var htmlList = "";
+	
+	
+  $(xml).find("person").each(function(index)
+  {
+    
+
+    //Builds table data (all the little arrays0)
+    tableArray = new Array;  //Holds data for each time thru the loop (for each person)
+    tableArray.push($(this).find("Column1").text(), $(this).attr("CONFPOP"), $(this).find("ADMALE").text(), $(this).find("ADFEML").text(), $(this).find("JUVMALE").text(), $(this).find("JUVFEML").text(), $(this).find("WHITE").text(), $(this).find("BLACK").text(), $(this).find("HISP").text(), $(this).find("ASIAN").text(), $(this).find("OTHER").text()); //We want to push the name of the person, then location, then occupation
+	aaData.push(tableArray);
+	
+  });
+    //AT THIS POINT: every row has been created, but need to create the columns
+  
+  aoColumns = new Array;
+  aoColumns = [{ "sTitle": "State" }, { "sTitle": "Confined prisoners" }, { "sTitle": "Adult Male" }, { "sTitle": "Adult Female" }, { "sTitle": "Juvenile Male" }, { "sTitle": "Juvenile Female" }, { "sTitle": "White" }, { "sTitle": "Black" }, { "sTitle": "Hispanic" }, { "sTitle": "Asian" }, { "sTitle": "Other" }] //Creates categories for data, but doesn't actually put the data in yet
+  
+  console.log(aaData);  //Want to log it outside of the loop
+
+  $("#prison_table").html('<table cellpadding="0" cellspacing="0" border="0" class="display" id="table"></table>'); //AT THIS POINT: everything is there but it's not been initialized
+  $("#nav_list").append(htmlList); 
+  $("#prison").append(htmlBottom);
+}
+//INITIALIZES: Table goes below (the table called person_table)
+$('#prison_table').dataTable( {
+  "aaData": aaData,
+  "aoColumns":  aoColumns
+});

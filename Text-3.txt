@@ -1,0 +1,34 @@
+<config>
+<game>
+    <title>Dementia</title>
+        <cat>
+            <catTitle>Mild</catTitle>
+            <item>mild-1</item>
+            <item>mild-2</item>
+            <item>mild-3</item>
+        </cat>
+        <cat>
+            <catTitle>Moderate</catTitle>
+            <item>Moderate-1</item>
+            <item>Moderate-2</item>
+            <item>Moderate-3</item>
+        </cat>
+        <cat>
+            <catTitle>Severe</catTitle>
+            <item>Severe-1</item>
+            <item>Severe-2</item>
+        </cat>
+</game>
+
+
+
+$(document).ready(function() {
+    var arr = [];
+    $(xml).find("cat").each(function(idx, v) {
+        arr[idx] = [];
+        $(v).find("item").each(function( i , vi) {
+            arr[idx].push( $(vi).text() );
+        });             
+    });
+    console.log( arr );
+});

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/docs-assets/ico/favicon.png" />
+
+    <title>Project 3</title>
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
+<!--jQuery init -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        
+<!--highSTOCK load-->
+	<script src="http://code.highcharts.com/stock/highstock.js"></script>
+
+<!--highMAPS load -->
+        <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+
+<!--Datatables -->
+    <script src="DataTables-1.9.4/media/src/DataTables.js"></script>
+
+<!-- Custom styles for this template -->
+        <link href="grid.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Bootstrap core CSS -->
+        <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        
+    <!--Bootstrap transmissions JS plugin -->
+        <script src="bootstrap/dist/js/bootstrap.js"></script>
+        
+     <!-- bxSlider Javascript file -->
+    <script src="jquery.bxslider.min.js"></script>
+   
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+<!--Load XML files -->
+        <script type="text/javascript">
+            
+        var Adfemale = ADFEML = [];
+        var Admale = ADMALE = [];
+        var Jufemale = JUVFEML = [];
+        var Jumale = JUVMALE = [];
+
+        var state = Column1 = [];
+        var ConfPop = CONFPOP = [];
+        
+        $(document).ready(function(){
+            console.log("Here we goooo");
+            $.ajax({
+                type: "GET",
+                url: "data/LASTONEGOD.xml",
+                dataType: "xml",
+                success: function(xml){
+                   
+                    $(xml).find('Table1').each(function(){                        
+                        var $Table1 = $(this);
+                        ConfPop.push(parseInt($Table1.find('CONFPOP').text()))
+                        Jumale.push(parseInt($Table1.find('JUVMALE').text()))
+                        Jufemale.push(parseInt($Table1.find('JUVFEML').text()))
+                        Admale.push(parseInt($Table1.find('ADMALE').text()))
+                        Adfemale.push(parseInt($Table1.find('ADFEML').text()))
+                        state.push($Table1.find('Column1').text())
+                    });
+                    // console.log(state);
+                   // console.log(Jumale);
+                   // console.log(Jufemale);
+                   // console.log(Admale);
+                  //  console.log(Adfemale);
+                  //  console.log(ConfPop);
+
+                    
+                    
+                        
+                }
+            });
+
+        });
+        
+
+ 
+    </script>
+        
+    <!--
+    work it ᕙ༼ຈل͜ຈ༽ᕗ harder
+    make it (ง •̀_•́)ง better
+    do it ᕦ༼ຈل͜ຈ༽ᕤ faster
+    makes us ヽ༼ຈل͜ຈ༽ﾉ stronger -->
+
+    
+</head>
+<body>
+    
+    <div class="container">
+
+      <div class="page-header">
+        <h1>BEHIND THE BARS</h1>
+                <div id="rectangle"></div>
+                <div id="rect-spacer"></div>
+                <div id="rectangle"></div>
+                <div id="rect-spacer"></div>
+                <div id="rectangle"></div>
+        <p class="lead">The U.S. prison system is long overdue for a change.</p>
+      </div>
+
+         <div class="row">
+    <div class="col-md-12">
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <h4>Prisons are a touchy, yet untouched issue in the United States (Click to expand)</h4>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        The rising prison population and recidivism rate have been well-documented for a number of years. In the 9 years since <a href="http://www.sentencingproject.org/detail/person.cfm?person_id=3"> The Sentencing Project</a> began, arguably little has changed. A vast overrepresentation of minorities behind bars belies the racial inequality that still exists in the system.
+        <p>
+        Today, it is estimated that 1 in every 31 adults is under some form of correctional control - be it imprisonment, probation or community service.
+
+      </div>
+    </div>
+  </div>
+  
+</div>
+     </div> <!--/ col-md-12 -->
+
+      </div>
+      <div class="row">
+            <div class="col-md-6">
+                <div id="pie1-container" style="min-width:100%; margin: 0 auto;"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="pie2-container" style="min-width:100%; margin: 0 auto;"></div>
+            </div>
+      </div>
+            <div class="row">
+        <div class="col-md-8">
+            The racial disparity in prisons is even more apparent when compared to the national population:
+            <ul>
+            <li><b>6 in every 1,000</b> black people are imprisoned in the U.S.</li>
+            <li><b>2 in every 1,000</b> Hispanics are as well (of those, about 1/3 are jailed in California.) </li>
+            <li><b>1 in every 1,000</b> white people are imprisoned in the U.S.</li>
+            </ul>
+        </div>
+        <div class="col-md-1"style="background-color:transparent; border: none;"></div>
+        <div class="col-md-3">
+            Despite not even coming close to the same population, <b>for every 1 white person in jail, there are 8 people of black or Hispanic origin.</b></div>
+        </div>    
+      <div class="row">
+            <div class="col-md-12">
+                <div id="gender-state-container" style="min-width: 100%; margin: 0 auto"></div>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+            California, Florida and Texas together make up about 30 percent of the total prison population.
+        </div>
+        <div class="col-md-1" style="background-color:transparent; border:none;"></div>
+            <div class="col-md-8">
+                According to the 2010 U.S. Census, <b>58.8 percent of the U.S. population is female.</b> Yet only <b>12 percent</b> of adult prisoners- and less than 1 percent of the juvenile prisoners- identify as women.
+                    <ul>
+                        <li>There are more than <b>half a million</b> men in prison today.</li>
+                        <li>In 2007, there were only <b>399</b> juvenile females imprisoned (compared to over 5,000 juvenile males).</li>
+                    </ul>
+            </div>
+      </div>
+      
+        <div class="row">
+            <div class="col-md-2" style="background-color:transparent; border:none;"></div>
+            <div class="col-md-8">
+                <script type="text/javascript">
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                mode: 'horizontal',
+                slideMargin: 2,
+                slideWidth: 1000,
+            });     
+        });
+        </script>
+    <h2>Did you know?</h2>
+    <ul class="bxslider">
+      <li>That between 1980 and 2008, the number of people imprisoned in the U.S. <b>quadrupled</b> from about 500,000 to 2.3 million?</li>
+      <li>That the U.S. today holds 5 percent of the world's population, and <b>25 percent</b> of the world's prison population?</li>
+      <li>That two-thirds those who have served time in prison will serve again?</li>
+      <li>That <b>only 32</b> of the country's 937 prisons are below 50 percent capacity?</li>
+    </ul>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-9">
+         <table id="person_table"></table>
+	  <ul><span id="person"></span> </ul>
+    </div>
+     </div>
+    <div class="row">
+        <div class="col-md-9">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+     
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="datatable" width="100%">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Confined Prisoners</th>
+			<th>Adult Male</th>
+			<th>Adult Female</th>
+			<th>Juvenile Male</th>
+			<th>Juvenile Female</th>
+                        <th>White</th>
+                        <th>Black</th>
+                        <th>Hispanic</th>
+                        <th>Asian</th>
+                        <th>Other</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>State</th>
+			<th>Confined Prisoners</th>
+			<th>Adult Male</th>
+			<th>Adult Female</th>
+			<th>Juvenile Male</th>
+			<th>Juvenile Female</th>
+                        <th>White</th>
+                        <th>Black</th>
+                        <th>Hispanic</th>
+                        <th>Asian</th>
+                        <th>Other</th>
+		</tr>
+	</tfoot>
+</table>
+		
+        </div>
+    </div>
+    
+    
+     </div> 
+     
+</body>
+<footer>
+    <script type="text/javascript">
+        
+       $(function () {
+    	
+
+		
+		// Build the chart
+        $('#pie1-container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Racial breakdown of U.S. prisoner population, 2007'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            
+            colors: [
+               '#f2d3bf',
+                '#eda487',
+                '#b6242a',
+                '#f2d3bf',
+            ],
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' %';
+                        }
+                    }
+                }
+            },
+            
+//It didn't seem worth it to build an array for five values, so I just put them in manually.
+            series: [{
+                type: 'pie',
+                name: 'Racial percentage',
+                data: [
+                    ['White', 231714],
+                    ['Hispanic', 104977],
+                    {
+                        name: 'Black',
+                        y: 246185,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Other', 4903+413],
+                    ['Asian', 4135],
+                ]
+            }]
+        });
+        
+        $('#pie2-container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'U.S. racial populations, 2010'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' %';
+                        }
+                    }
+                }
+            },
+             colors: [
+                '#f2d3bf',
+                '#eda487',
+                '#b6242a',
+                '#f2d3bf',
+                ],
+            series: [{
+                type: 'pie',
+                name: 'Racial category',
+                data: [
+                    ['White',   223553265],
+                    ['Hispanic',       50477594],
+                    {
+                        name: 'Black',
+                        y: 38929319,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Asian',     14674252],
+                    ['Other',   2932248+540013]
+                ]
+            }]
+        });
+    });
+       
+       
+//YOUR SECOND CHART IS THE INCARCERATION POPULATION, BY STATE, DIVIDED INTO GENDER CATEGORIES. DON'T FORGET.
+//Styleguide wants bar but no scroll available, so column it is
+
+       $(function () {
+        $('#gender-state-container').highcharts({
+            
+            chart: {
+                type: 'column',
+                
+            },
+            
+            
+            scrollbar: {
+                enabled: true
+            },
+            rangeSelector: {
+		inputEnabled: $('#container').width() > 480,
+		 selected: 1
+            },
+            
+            title: {
+                text: 'Total state incarceration, grouped by gender',
+            },
+             colors: [
+                '#f2d3bf',
+                '#eda487',
+                '#b6242a',
+                '#f2d3bf',,
+
+            ],
+            xAxis: {
+                 min: 0,
+                max: 12,
+                categories: ["CALIFORNIA", "FLORIDA", "TEXAS", "GEORGIA", "PENNSYLVANIA", "LOUISIANA", "VIRGINIA", "NEW YORK", "TENNESSEE", "NEW JERSEY", "ILLINOIS", "OHIO", "ARIZONA", "MASSACHUSETTS", "MICHIGAN", "WASHINGTON", "KENTUCKY", "NORTH CAROLINA", "COLORADO", "MARYLAND", "INDIANA", "WISCONSIN", "SOUTH CAROLINA", "ALABAMA", "MISSISSIPPI", "NEW MEXICO", "NEVADA", "MISSOURI", "OKLAHOMA", "UTAH", "MINNESOTA", "OREGON", "WEST VIRGINIA", "KANSAS", "D.C.", "ARKANSAS", "IDAHO", "IOWA", "NEBRASKA", "NEW HAMPSHIRE", "SOUTH DAKOTA", "MAINE", "WYOMING", "MONTANA", "NORTH DAKOTA", "ALASKA", "CONNETICUT", "DELEWARE", "HAWAII", "RHODE ISLAND", "VERMONT"]
+                ,
+                title: {
+                    text: 'State'
+
+                }
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                max: 70000,
+                title: {
+                    text: 'Number of people imprisoned'
+                }
+            },
+            
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{
+                name: 'Adult female',
+                data: [10792, 8550, 8094, 4030, 3834, 3379, 3545, 2275, 2842, 1539, 1615, 2315, 2086, 546, 1457, 1614, 1716, 1186, 1466, 1215, 1170, 1104, 1036, 1323, 539, 703, 1070, 618, 926, 738, 530, 621, 494, 507, 299, 463, 435, 241, 201, 109, 216, 128, 105, 71, 42, 0, 0, 0, 0, 0, 0]  
+            }, {
+                name: 'Juvenile female',
+                data: [0, 20, 71, 48, 9, 14, 3, 38, 6, 4, 14, 1, 14, 4, 14, 1, 0, 29, 2, 6, 13, 23, 4, 5, 13, 16, 2, 3, 2, 0, 2, 2, 0, 0, 1, 14, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
+            }, {
+                name: 'Adult male',
+                data: [71238, 52592, 48753, 30594, 28045, 24073, 23681, 22199, 16384, 14278, 13232, 12311, 11814, 11971, 10216, 9909, 9643, 9451, 9326, 8620, 8651, 8581, 8467, 7931, 6555, 6229, 5396, 5624, 4595, 4164, 4168, 3814, 3466, 3177, 2766, 2327, 1979, 1396, 1244, 1083, 889, 632, 618, 408, 337, 0, 0, 0, 0, 0, 0] 
+            }, {
+                
+                name: 'Juvenile male',
+                data: [10, 786, 447, 294, 291, 233, 108, 804, 93, 43, 209, 55, 249, 86, 123, 34, 0, 361, 29, 242, 80, 188, 46, 47, 56, 74, 49, 42, 48, 4, 15, 7, 0, 2, 37, 48, 5, 12, 0, 7, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0]  
+            }]
+        });
+
+
+
+       }); //DO NOT TOUCH. NO. NO
+       
+/*Breaking my whole code......
+ *
+ *function parsexml(){
+	     console.log("parsexml");
+             $.ajax({
+		type: "GET",
+		url: "data/LASTONEGOD.xml",
+		dataType: "xml",
+		success: function(xml) {
+                console.log("xml success 3");
+				    
+		buildHTML += '<table class="table table-striped" id="datatable" width="100%"><thead><tr class="headWhite"><td>State</td><td>Confined Prisoners</td><td>Adult Male</td><td>Adult Female</td><td>Juvenile Male</td><td>Juvenile Female</td><td>White</td><td>Black</td><td>Hispanic</td><td>Asian</td><td>Other</td></tr></thead><tbody>';
+				    
+                                    
+                                    $(xml).find('Table1').each(function(){
+				    var $Table1 = $(this);
+			       
+				    CONFPOP = $(this).find('CONFPOP').text();
+				    console.log(CONFPOP);
+				    ADMALE = $(this).find('ADMALE').text();
+				    ADFEML = $(this).find('ADFEML').text();
+				    JUVMALE = $(this).find('JUVMALE').text();
+				    JUVFEML = $(this).find('JUVFEML').text();
+                                    WHITE = $(this).find('WHITE').text();
+                                    BLACK = $(this).find('BLACK').text();
+                                    HISP = $(this).find('HISP').text();
+                                    ASIAN = $(this).find('ASIAN').text();
+                                    OTHER = $(this).find('OTHER').text();
+				    
+				    
+				    console.log(OTHER);
+                               
+                               buildHTML += '<tr><td>' + CONFPOP + '</td><td>' + ADMALE + '</td><td>' + ADFEML + '</td><td>' + JUVMALE + '</td><td>' + JUVEFEML + '</td><td>' + WHITE + '</td><td>' + BLACK + '</td><td>' + HISP + '</td><td>' + ASIAN + '</td><td>' + OTHER + </td></tr>';
+				    
+				    
+				    });
+				    
+				    buildHTML += '</tbody></table>';
+				    
+				    $(buildHTML).appendTo('.table');
+                                    
+                }}); //why is it making me write these....
+             
+				    $('#tableA').dataTable({});
+                                    
+                writeChart();
+				    
+				}//success function 3
+				
+			 });//close ajax
+                         
+			};//closeparsexml
+                                    
+                                    
+
+      */          
+
+    
+
+    </script>
+    
+</footer>
+</html>

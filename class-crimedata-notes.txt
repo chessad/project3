@@ -1,0 +1,131 @@
+f9e8d9
+f2d3bf
+eda487
+d47754
+c9593a
+
+BROWN
+946c5c
+664a3f
+
+Compared to the population, black people are vastly overrepresented in U.S. prisons.
+
+
+About one-third of jails are at or beyond "maximum capacity"
+
+Only 32 prisons below 50 percent capacity
+
+
+From 1980 to 2008, the number of people incarcerated in America quadrupled-from roughly 500,000 to 2.3 million people
+Today, the US is 5% of the World population and has 25% of world prisoners.
+Combining the number of people in prison and jail with those under parole or probation supervision, 1 in ever y 31 adults, or 3.2 percent of the population is under some form of correctional control
+
+
+Statistically TWO-THIRDS of prisoners will committ another crime
+
+$.ajax({
+        type: "GET",
+	url: "sites.xml",
+	dataType: "xml",
+	success: parseXML() {
+ 
+	}
+});
+
+document.ready(
+  loadXML();
+
+)
+
+parseXML(XML)
+for loop
+  arrayNodeofXML[]
+
+OR
+
+arrays for each object (ex three arrays for age/gender/job)
+
+OR
+
+"complex array" object : array of arrays (ex array for "person" and in person arrays for age/gender/job)
+
+
+
+buildHTML
+ for loop name.length (three names? runs three times)
+
+
+buildChart1()
+  highcharts code
+     age[] ((array - for x axis or y axis))
+
+
+buildChart2()
+  highcharts code
+     age[] ((array - for x axis or y axis))
+
+
+
+If having trouble seeing where at-- console.log
+
+buildTable()
+
+
+
+
+HIDDEN VALUES (that might be useful)
+-Juveniles being tried as adults
+-BM (FBOP) - # people held for federal
+
+
+ALABAMA  2:30
+ALASKA	n/a
+ARIZONA 31:37
+ARKANSAS 38:49
+CALIFORNIA 50:94
+COLORADO  95:109
+CONNETICUT n/a
+DELEWARE  n/a
+FLORIDA  110:152
+GEORGIA  153:225
+HAWAII  n/a
+IDAHO  226:232
+ILLINOIS  233:256
+INDIANA  257:279
+IOWA  280:288
+KANSAS  289:301
+KENTUCKY  302:333
+LOUISIANA 332:375
+MAINE   376:378
+MARYLAND  379:388
+MASSACHUSETTS 389:400
+MICHIGAN  401:421
+MINNESOTA 422:443
+MISSISSIPPI  444:465
+MISSOURI  466:490
+MONTANA  491:495
+NEBRASKA  497:505
+NEVADA  506:513
+NEW HAMPSHIRE  514:518
+NEW JERSEY  519:534
+NEW MEXICO  535:545
+NEW YORK   546:562
+NORTH CAROLINA  563:587
+NORTH DAKOTA  588:594
+OHIO  595:626
+OKLAHOMA  627:644
+OREGON  645:655
+PENNSYLVANIA  656:691
+RHODE ISLAND  n/a
+SOUTH CAROLINA  692:710
+SOUTH DAKOTA  711:715
+TENNESSEE  716:754
+TEXAS  755:829
+UTAH  830:837
+VERMONT  n/a
+VIRGINIA  838:879
+WASHINGTON 880:899
+D.C  900
+WEST VIRGINIA  901:910
+WISCONSIN   911:932
+WYOMING   933:937

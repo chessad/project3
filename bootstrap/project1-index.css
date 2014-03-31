@@ -1,0 +1,292 @@
+/*.navbar-static-top{
+  background-color:#155d9a;
+  color: #fff;
+}
+
+.navbar-collapse collapse {
+  background-color:#208ee6;
+}
+*/
+
+.navbar-static-top, navbar-default, navbar {
+  background-color: #208ee6 ;
+    }
+.nav-container {
+  background-color: #208ee6 ;
+}
+.navbar-nav, nav {
+  background-color: #134670;
+  width:100%;
+  
+}
+
+li{
+  padding: 0.5em 0 0.5em 1em;
+}
+
+ul{
+  float:right;
+}
+
+.subnavbar {
+  
+}
+
+/* Sprites preload
+-------------------------------------------------------- */
+
+/*Header buttons----------- */
+
+.header-question {
+  display:block;
+  background: url('sprites1.png') no-repeat -2px -100px;
+  width: 20px;
+  height: 20px;
+}
+
+.header-settings {
+  display:block;
+  background: url('sprites1.png') no-repeat -77px -100px;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-dial {
+  display:block;
+  background: url('sprites1.png') no-repeat -152px -29px;
+  width: 56px;
+  height: 56px;
+}
+.nav-dial:hover {
+  display:block;
+  background: url('sprites1.png') no-repeat -226px -29px;
+  width: 56px;
+  height: 56px;
+}
+
+.nav-bubble {
+  display:block;
+  background: url('sprites1.png') no-repeat -152px -100px;
+  width: 55px;
+  height: 46px;
+}
+
+.nav-bubble:hover {
+  display:block;
+  background: url('sprites1.png') no-repeat -226px -100px;
+  width: 57px;
+  height: 48px;
+}
+
+.nav-people {
+  display:block;
+  background: url('sprites1.png') no-repeat -301px -29px;
+  width: 60px;
+  height: 40px;
+}
+
+.nav-people:hover {
+  display:block;
+  background: url('sprites1.png') no-repeat -376px -29px;
+  width: 62px;
+  height: 42px;
+}
+
+.nav-tag {
+  display:block;
+  background: url('sprites1.png') no-repeat -302px -99px;
+  width: 48px;
+  height: 48px;
+}
+
+.nav-tag:hover {
+  display:block;
+  background: url('sprites1.png') no-repeat -376px -99px;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-paper {
+  display:block;
+  background: url('sprites1.png') no-repeat -227px -169px;
+   width: 43px;
+   height: 48px;
+}
+
+.nav-paper:hover {
+  display:block;
+  background: url('sprites1.png') no-repeat -301px -169px;
+  width: 45px;
+  height: 50px;
+}
+
+.nav-bars {
+  display:block;
+  background: url('sprites1.png') no-repeat -376px -169px;
+  width: 42px;
+  height: 50px;
+}
+
+.nav-bars:hover{
+  display:block;
+  background: url('sprites1.png') no-repeat -151px -239px;
+  width: 42px;
+  height: 50px;
+}
+
+/*Body buttons---------- */
+
+.search-glyph {
+  background: url('sprites1.png') no-repeat -226px -239px;
+  width: 23px;
+  height: 22px;
+}
+
+.task-settings {
+  background: url('sprites1.png') no-repeat -302px -239px;
+  width: 20px;
+  height: 20px;
+}
+
+.announce-button-left {
+  background: url('sprites1.png') no-repeat -2px -240px;
+  width: 22px;
+  height: 22px;
+}
+
+.announce-button-right {
+  background: url('sprites1.png') no-repeat -77px -240px;
+  width: 22px;
+  height: 22px;
+}
+
+.recs-button-paper {
+  background: url('sprites1.png') no-repeat -2px -170px;
+  width: 19px;
+  height: 23px;
+}
+
+.recs-button-light {
+  background: url('sprites1.png') no-repeat -77px -169px;
+  width: 14px;
+  height: 23px;
+}
+
+.recs-button-check {
+  background: url('sprites1.png') no-repeat -152px -170px;
+  width: 22px;
+  height: 20px;
+  
+}
+.orange-guy {
+  background: url('sprites1.png') no-repeat -2px -29px;
+  width:207px;
+  height: 67px;
+  
+}
+
+.green-guy {
+  background:url('sprites1.png') no-repeat -77px -29px;
+  width:207px;
+  height:67px
+}
+
+/*Footer buttons--------- */
+.avatar {
+  background: url('sprites1.png') no-repeat -377px -239px;
+  width: 30px;
+  height: 30px;
+}
+
+.facebook {
+  background: url('sprites1.png') no-repeat -2px -309px;
+  width: 16px;
+  height: 16px;
+}
+
+.facebook:hover {
+  background: url('sprites1.png') no-repeat -77px -309px;
+  width: 16px;
+  height: 16px;
+}
+
+.twitter{
+  background: url('sprites1.png') no-repeat -152px -309px;
+  width: 16px;
+  height: 16px;
+}
+
+.twitter:hover{
+  background: url('sprites1.png') no-repeat -227px -309px;
+  width: 16px;
+  height: 16px;
+}
+
+.linkedin {
+  background: url('sprites1.png') no-repeat -302px -309px;
+  width: 16px;
+  height: 16px;
+}
+
+.linkedin:hover{
+  background: url('sprites1.png') no-repeat -377px -309px;
+  width: 16px;
+  height: 16px;
+}
+
+.youtube{
+  background: url('sprites1.png') no-repeat -2px -379px;
+  width: 16px;
+  height: 16px;
+}
+
+.youtube:hover{
+  background: url('sprites1.png') no-repeat -77px -380px;
+  width: 16px;
+  height: 16px;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+body {
+  min-height: 2000px;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 1em;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
